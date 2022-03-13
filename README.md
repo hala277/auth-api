@@ -49,9 +49,9 @@ get() {
 
 ![Auth uml](./UML/Authuml.jpg)
 
-+ [heruko]()
-+ [pull req]()
-+ [actions]()
++ [heruko](https://halaauth-api.herokuapp.com)
++ [pull req](https://github.com/hala277/auth-api/pulls?q=is%3Apr+is%3Aclosed)
++ [actions](https://github.com/hala277/auth-api/actions)
 
 
 
