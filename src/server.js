@@ -29,12 +29,11 @@ app.get('/user', bearerAuth(User), acl('read'), (request, response) => {
 })
 
 app.post('/user', bearerAuth(User), acl('create'), (request, response) => {
+   
     response.status(201).send('new secret has been created');
 })
 
-app.put('/user', bearerAuth(User), acl('update'), (request, response) => {
-    response.status(201).send('secret update');
-})
+app.put('/user', bearerAuth(User), acl('update'),updateHandller);
 
 app.delete('/user', bearerAuth(User), acl('delete'), (request, response) => {
     response.send('secret deleted');
@@ -65,6 +64,12 @@ function userHandler(request, response) {
 
 }
 
+async function updateHandller(request,response){
+    let id =request.body.id;
+    let obj = request.body;
+    let ubdateData = await request.User.update(id,obj);
+    response.status(200).json(ubdateData); 
+}
 // 500 rout handler
 app.use(errorHandler);
 
